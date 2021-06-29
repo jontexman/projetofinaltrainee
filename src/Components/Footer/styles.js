@@ -6,7 +6,7 @@ export const Container = styled.footer`
     left: 0;
     bottom: 0;
     display: flex;
-    justify-content: space-between;
-    position: fixed;
+    justify-content: space-between;   
     background-color: #1E2535;
+    margin-top: 3rem;
 `;

@@ -1,3 +1,4 @@
+
 import './App.css';
 import { Footer } from './Components/Footer'
 import {Navbar} from './Components/Navbar'
@@ -12,6 +13,7 @@ import {Title} from './Components/Title'
 import {ProductDetails} from './Components/ProductDetails'
 import {Text} from './Components/Text'
 import {Video} from './Components/Video'
+
 
 function App() {
   return (

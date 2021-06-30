@@ -7,12 +7,12 @@ export const Container = styled.section`
   max-width: 100%;
   p{
     font: roboto;
-    font-size: 1.875rem;
+    font-size: 1.4rem;
     color: #909A9C;
   }
 
   div{
-    min-width: 341px;
+    min-width: 256px;
     display: inline;
   }
 
@@ -32,7 +32,7 @@ export const Container = styled.section`
     
     p{
       text-align: right;
-      font-size: 2.25rem;
+      font-size: 1.69rem;
       font-weight: bold;
       vertical-align: middle;
     }

@@ -19,11 +19,30 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: sans-serif;
     background-color: var(--bg-color);
+  }
 
+
+
+  html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  html {
+    overflow-y: scroll;
+  }
+  #wrapper {
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .page{
+    padding-bottom: 9rem;
   }
 
   section {
-    max-width: 1024px;
+    max-width: 768px;
     align-self: center;
     margin-top: 1.5rem;
     margin-left: auto;

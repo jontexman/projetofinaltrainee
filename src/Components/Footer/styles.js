@@ -5,8 +5,10 @@ export const Container = styled.footer`
     height: 6rem;
     left: 0;
     bottom: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;   
     background-color: #1E2535;
-    margin-top: 3rem;
+    margin-top: 9rem;
+    position: absolute;
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.h1`
   font-family: sans-serif;
   font: Roboto;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #FFF;
   align-self: center;

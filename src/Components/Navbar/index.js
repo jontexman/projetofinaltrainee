@@ -8,7 +8,7 @@ export const Navbar = () => {
         <Container>
             <button>Menu</button>  
             <a href='/'><img src={LogoAzul} alt="" /></a>
-            <button>Usuário</button>
+            <button onClick={event =>  window.location.href='/Login'}>Usuário</button>
         </Container>
     )
 }

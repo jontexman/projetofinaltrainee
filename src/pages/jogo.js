@@ -10,7 +10,7 @@ import {Video} from '../Components/Video'
 
 export const Jogo = () => {
   return (
-    <section class='page'> 
+    <section className='page'> 
         <Title>Minecraft</Title>
         <ProductDetails producer='Mojang' date='Novembro de 2011' category1='Sandbox' category2='Sobrevivência' price='R$ 29,90'/>
         <Carousel autoPlay={true} autoPlaySpeed={250}infiniteLoop={true} className='carousel'>

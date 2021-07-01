@@ -1,7 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-
-export const Container = styled.nav`
+export const Container =  styled.section`
 login-wrapper {
     display: flex;
     flex-direction: column;

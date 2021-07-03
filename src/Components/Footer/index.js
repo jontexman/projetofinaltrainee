@@ -5,7 +5,8 @@ import { Container } from './styles';
 
 export const Footer = () => {
     return (
-        <Container>
+        <Container className="hide-small">
+            
             <FooterCard img = {img1} name="Iago Carvalho" favoritegame="Minecraft"></FooterCard>
             <FooterCard img = {img1} name="João Paulo" favoritegame="Apex Legends"></FooterCard>
             <FooterCard img = {img1} name="Mateus Ribeiro" favoritegame="Fifa 21"></FooterCard>

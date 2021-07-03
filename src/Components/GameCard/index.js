@@ -4,9 +4,11 @@ import {Container} from './styles'
 export const GameCard = (props) => {
   return(
     <Container>
-      <img src={props.img}/>
-      <p className='name'>{props.name}</p>
-      <p className='price'>{props.price}</p>
+      <a href='/jogo'>
+        <img src={props.img}/>
+        <p className='name'>{props.name}</p>
+        <p className='price'>{props.price}</p>
+      </a>
     </Container>
   );
 }

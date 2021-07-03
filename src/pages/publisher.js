@@ -16,6 +16,9 @@ export const Publisher = () => {
         <GameCard img={img1} name='Minecraft' price='R$ 29,90'></GameCard>
         <GameCard img={img1} name='Minecraft' price='R$ 29,90'></GameCard>
         <GameCard img={img1} name='Minecraft' price='R$ 29,90'></GameCard>
+        <GameCard img={img1} name='Minecraft' price='R$ 29,90'></GameCard>
+        <GameCard img={img1} name='Minecraft' price='R$ 29,90'></GameCard>
+        <GameCard img={img1} name='Minecraft' price='R$ 29,90'></GameCard>
       </section>
     </section>
   );

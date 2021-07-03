@@ -10,7 +10,10 @@ export const Container = styled.section`
 
   :hover{
     transform: scale(1.05);
+    
   }
+
+  
 
   img {
     max-height: 150px;

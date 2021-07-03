@@ -55,6 +55,11 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
+  a{
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   .wrap-content {
     display: flex;
     flex-wrap: wrap;

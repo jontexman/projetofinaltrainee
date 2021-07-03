@@ -12,7 +12,10 @@ import { PublisherData } from './PublisherData';
 
 export const Navbar = () => {
     const [sidebar, setSidebar] = useState(false);
-    const showSidebar = () => setSidebar(!sidebar);
+    const showSidebar = () =>{ 
+        setRightbar(false)
+        setSidebar(!sidebar)
+    };
 
     const [categorybar, setCategorybar] = useState(false);
     const showCategorybar = () => {
@@ -24,6 +27,12 @@ export const Navbar = () => {
     const showPublisherbar = () => {
         setPublisherbar(!publisherbar)
         setSidebar(!sidebar)
+    };
+
+    const [rightbar, setRightbar] = useState(false);
+    const showRightbar = () => {
+        setSidebar(false)
+        setRightbar(!rightbar)
     };
 
     return (
@@ -54,7 +63,7 @@ export const Navbar = () => {
                         <li className='nav-text' onClick={showPublisherbar}>
                             <a href='#'>
                                 <IoIcons.IoMdPeople />
-                                <span>Publicadoras</span>
+                                <span>Publishers</span>
                             </a>
                         </li>
                     </ul>
@@ -106,8 +115,32 @@ export const Navbar = () => {
                 </div>
 
                 
-                
-                <button>Usuário</button>
+                <a href='#' className='menu-bars-right' onClick={showRightbar} >
+                    <span>Entrar</span>
+                    <AiIcons.AiOutlineUser className='hide-small'/>
+                </a>
+                <nav className={rightbar ? 'nav-menu-right active' : 'nav-menu-right'}>
+                    <ul className='nav-menu-items'>
+                        <li className='navbar-toggle'  >
+                        <a href='#' className='menu-bars'>
+                            <AiIcons.AiOutlineClose onClick={showRightbar}/>
+                        </a>
+                        <span>Entrar</span>
+                        </li>
+                        <li className='nav-text small'>
+                                <span>Não é cadastrado? <a>Cadastre-se</a></span>
+                        </li>
+                        <li className='nav-text'>
+                            <form>
+                                <label>Usuário</label>
+                                <input type='text' id='user'/>
+                                <label>Senha</label>
+                                <input type='password' id='password'/>
+                                <button type='submit'>Entrar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
             </IconContext.Provider>
         </Container>
     )

@@ -18,17 +18,17 @@ export const Container = styled.section`
         width: 100%;
         flex-wrap: wrap;
         color: blanchedalmond;
-        font-size: 0.9rem;
+        font-size: 1rem;
         align-items: flex-start;
       
     }
         .name {
-            text-indent: 1rem;
+            text-indent: 2rem;
             font-weight: 700;
      
         }
         .favoritegame {
             font-style: italic;
-            text-indent: 1rem;
+            text-indent: 2rem;
         }
 `; 

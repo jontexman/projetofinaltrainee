@@ -81,7 +81,7 @@ export const GlobalStyle = createGlobalStyle`
     border: 1px solid #243C58;  /* creates padding around scroll thumb */
   }
 
-  @media only screen and (max-width: 500px) { 
+  @media only screen and (max-width: 1024px) { 
         .hide-small { 
             display: none; 
         } 

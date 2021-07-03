@@ -6,6 +6,9 @@ import { Publisher } from './pages/publisher';
 import { UserPage } from './pages/UserPage';
 import {Login_page} from './pages/LoginPage'
 
+import {Publisher} from './pages/publisher'
+import {Category} from './pages/category'
+
 
 export const MyRoutes = () => {
   return (
@@ -13,8 +16,14 @@ export const MyRoutes = () => {
       <Route path='/jogo'>
         <Jogo />
       </Route>
-      <Route path='/publisher'>
-        <Publisher />
+      <Route path='/publisher/:name'>
+        <Publisher/>
+      </Route>
+      <Route path='/category/:name'>
+        <Category/>
+      </Route>
+      <Route path='/'>
+        <Home/>
       </Route>
       <Route path="/Login">
         <Login_page />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LogoAzul from '../../assets/logo_azul.png';
 import { Container } from './styles';
 import * as FaIcons from 'react-icons/fa';
@@ -8,9 +8,27 @@ import * as IoIcons from 'react-icons/io';
 import {IconContext} from 'react-icons';
 import { CategoryData } from './CategoryData';
 import { PublisherData } from './PublisherData';
+import {api} from '../../services/api'
 
 
 export const Navbar = () => {
+    const [categories, setCategories] = useState([]);
+
+  useEffect(() =>{
+    api.get('category/index')
+    .then((response) => {setCategories(response.data)})
+  }, [])
+
+  const [publishers, setPublishers] = useState([]);
+
+  useEffect(() =>{
+    api.get('publishers/index')
+    .then((response) => {
+        setPublishers(response.data)
+    })
+  }, [])
+
+
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () =>{ 
         setRightbar(false)
@@ -83,11 +101,11 @@ export const Navbar = () => {
                             <FiIcons.FiArrowLeft />
                         </a>
                         </li>
-                        {CategoryData.map((item, index) => {
+                        {categories.map((category) => {
                         return (
-                            <li key={index} className={item.cName}>
-                            <a href={item.path}>
-                                <span>{item.title}</span>
+                            <li key={category.id} className='nav-text'>
+                            <a href={`/category/${category.name}`}>
+                                <span>{category.name}</span>
                             </a>
                             </li>
                         );
@@ -101,11 +119,11 @@ export const Navbar = () => {
                             <FiIcons.FiArrowLeft />
                         </a>
                         </li>
-                        {PublisherData.map((item, index) => {
+                        {publishers.map((publisher) => {
                         return (
-                            <li key={index} className={item.cName}>
-                            <a href={item.path}>
-                                <span>{item.title}</span>
+                            <li key={publisher.id} className='nav-text'>
+                            <a href={`/publisher/${publisher.name}`}>
+                                <span>{publisher.name}</span>
                             </a>
                             </li>
                         );

@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
     display: flex;
+
     max-height: 4.7rem;
     img {    
     max-height: 4.7rem;

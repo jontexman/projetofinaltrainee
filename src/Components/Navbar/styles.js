@@ -209,6 +209,10 @@ export const Container = styled.nav`
         margin-right: 1.5rem;
     }
 
+    .register{
+        margin-top: 10rem;
+    }
+
  
 
 

@@ -14,6 +14,7 @@ export const Navbar = () => {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () =>{ 
         setRightbar(false)
+        setRegisterbar(false)
         setSidebar(!sidebar)
     };
 
@@ -34,6 +35,13 @@ export const Navbar = () => {
         setSidebar(false)
         setRightbar(!rightbar)
     };
+
+    const [registerbar, setRegisterbar] = useState(false);
+    const showRegisterbar = () => {
+        setRegisterbar(!registerbar)
+        setRightbar(!rightbar)
+    };
+    const closeRegisterbar = () => setRegisterbar(false);
 
     return (
         <Container>
@@ -127,15 +135,41 @@ export const Navbar = () => {
                         <span>Entrar</span>
                         </li>
                         <li className='nav-text small'>
-                                <span>Não é cadastrado? <a>Cadastre-se</a></span>
+                                <span>Não é cadastrado? <a onClick={showRegisterbar}>Registre-se</a></span>
                         </li>
                         <li className='nav-text'>
                             <form>
-                                <label>Usuário</label>
+                                <label>Usuário/Email</label>
                                 <input type='text' id='user'/>
                                 <label>Senha</label>
                                 <input type='password' id='password'/>
                                 <button type='submit'>Entrar</button>
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+                <nav className={registerbar ? 'nav-menu-right active' : 'nav-menu-right'}>
+                    <ul className='nav-menu-items'>
+                        <li className='navbar-toggle'  >
+                        <a href='#' className='menu-bars'>
+                            <AiIcons.AiOutlineClose onClick={closeRegisterbar}/>
+                        </a>
+                        <span>Registrar</span>
+                        </li>
+                        <li className='nav-text small'>
+                                <span>Já é cadastrado? <a onClick={showRegisterbar}>Entrar</a></span>
+                        </li>
+                        <li className='nav-text'>
+                            <form className='register'>
+                                <label>Usuário</label>
+                                <input type='text' id='user'/>
+                                <label>Email</label>
+                                <input type='email' id='email'/>
+                                <label>Senha</label>
+                                <input type='password' id='password'/>
+                                <label>Confirmar Senha</label>
+                                <input type='password' id='confirm-password'/>
+                                <button type='submit'>Registrar</button>
                             </form>
                         </li>
                     </ul>

@@ -3,7 +3,9 @@ import styled from 'styled-components'
 export const Container = styled.section`
     display: flex;
     max-height: 4.7rem;
-    img {    
+    img {   
+    position: relative;
+    top: -0.6rem;
     max-height: 4.7rem;
     width: auto;
     margin: 0px;

@@ -28,6 +28,7 @@ export const Navbar = () => {
 
     return (
         <Container>
+
             <IconContext.Provider value={{ color: '#fff' }}>
                 <a href='#' className='menu-bars'>
                     <FaIcons.FaBars onClick={showSidebar} />
@@ -59,8 +60,7 @@ export const Navbar = () => {
                         </li>
                     </ul>
                 </nav>
-                <nav className={categorybar ? 'nav-menu active' : 'nav-menu'}>
-                    <ul className='nav-menu-items' onClick={showCategorybar}>
+                <nav className={categorybar ? 'nav-menu active' : 'nav-menu'}>                    <ul className='nav-menu-items' onClick={showCategorybar}>
                         <li className='navbar-toggle'>
                         <a href='#' className='menu-bars'>
                             <FiIcons.FiArrowLeft />
@@ -77,7 +77,6 @@ export const Navbar = () => {
                         })}
                     </ul>
                 </nav>
-
                 <nav className={publisherbar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items' onClick={showPublisherbar}>
                         <li className='navbar-toggle'>
@@ -109,6 +108,9 @@ export const Navbar = () => {
                 
                 <button>Usuário</button>
             </IconContext.Provider>
+
+
+
         </Container>
     )
 }

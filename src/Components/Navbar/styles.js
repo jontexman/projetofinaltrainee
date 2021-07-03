@@ -36,7 +36,9 @@ export const Container = styled.nav`
     .nav-menu {
     background-color: #1E2535;
     width: 250px;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     position: fixed;

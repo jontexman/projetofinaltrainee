@@ -67,5 +67,18 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 100%;
   }
 
+  ::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+  }
+
+  :-webkit-scrollbar-track {
+    background: #243C58;        /* color of the tracking area */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #1E2535;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid #243C58;  /* creates padding around scroll thumb */
+  }
 
 `;

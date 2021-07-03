@@ -3,6 +3,7 @@ import {Jogo} from './pages/jogo'
 import {Home} from './pages/home'
 import {Login_page} from './pages/LoginPage'
 import {Publisher} from './pages/publisher'
+import {Category} from './pages/category'
 
 export const MyRoutes = () => {
   return(
@@ -10,8 +11,11 @@ export const MyRoutes = () => {
       <Route path='/jogo'>
         <Jogo/>
       </Route>
-      <Route path='/publisher'>
+      <Route path='/publisher/:name'>
         <Publisher/>
+      </Route>
+      <Route path='/category/:name'>
+        <Category/>
       </Route>
       <Route path='/'>
         <Home/>

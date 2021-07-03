@@ -8,19 +8,11 @@ import { useState, useEffect} from 'react'
 import {api} from './services/api'
 function App() {
   
-  const [categories, setCategories] = useState([]);
-
-  useEffect(() =>{
-    api.get('category/index')
-    .then((response) => {setCategories(response.data)})
-  }, [])
+  
   return (
     <div id = "wrapper">
       <GlobalStyle/>
       <Navbar/>
-      <ul>
-      {categories.map((category) => {return <li key= {category.id}>{category.name}</li>})}
-      </ul>
       <Router>
         <MyRoutes/>
       </Router>

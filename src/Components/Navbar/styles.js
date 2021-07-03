@@ -71,7 +71,7 @@ export const Container = styled.nav`
     align-items: center;
     padding: 8px 0px 8px 16px;
     list-style: none;
-    height: 60px;
+    min-height: 60px;
     }
 
     .nav-text a {
@@ -79,6 +79,7 @@ export const Container = styled.nav`
     color: #f5f5f5;
     font-size: 18px;
     width: 95%;
+    min-height: 60px;
     height: 100%;
     display: flex;
     align-items: center;

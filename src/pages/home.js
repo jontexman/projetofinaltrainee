@@ -9,6 +9,7 @@ import {GameCard} from '../Components/GameCard'
 export const Home = () => {
   return (
     <section className='page'>
+
         <Carousel autoPlay={true} autoPlaySpeed={250}infiniteLoop={true} className='carousel'>
           <a href='/jogo'><CarouselItem src={img1} legend='Minecraft'/></a>
           <CarouselItem src={img2} legend='Grand Theft Auto V'/>

@@ -1,15 +1,18 @@
-import {Switch, Route} from "react-router-dom";
-import {Jogo} from './pages/jogo'
-import {Home} from './pages/home'
+
+import { Switch, Route } from "react-router-dom";
+import { Jogo } from './pages/jogo';
+import { Home } from './pages/home';
+import { Publisher } from './pages/publisher';
+import { UserPage } from './pages/UserPage';
 import {Login_page} from './pages/LoginPage'
-import {Publisher} from './pages/publisher'
 import {Category} from './pages/category'
 
+
 export const MyRoutes = () => {
-  return(
+  return (
     <Switch>
       <Route path='/jogo'>
-        <Jogo/>
+        <Jogo />
       </Route>
       <Route path='/publisher/:name'>
         <Publisher/>
@@ -20,10 +23,12 @@ export const MyRoutes = () => {
       <Route path="/Login">
         <Login_page />
       </Route>
-      <Route path='/'>
-        <Home/>
+      <Route path="/UserPage">
+        <UserPage />
       </Route>
-      
+      <Route path='/'>
+        <Home />
+      </Route>
     </Switch>
   );
 }

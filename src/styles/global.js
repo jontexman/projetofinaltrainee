@@ -63,7 +63,7 @@ export const GlobalStyle = createGlobalStyle`
   .wrap-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     max-width: 100%;
   }
 

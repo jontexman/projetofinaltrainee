@@ -130,9 +130,13 @@ export const Navbar = () => {
     const closeRegisterbar = () => setRegisterbar(false);
 
     const [userbar, setUserbar] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
     const showUserbar = () =>{ 
         setUserbar(!userbar)
+        setIsAdmin(user.is_Admin)
     };
+
+
 
     return (
         <Container>
@@ -271,6 +275,24 @@ export const Navbar = () => {
                         <a href='#' className='menu-bars'>
                             <AiIcons.AiOutlineClose />
                         </a>
+                        </li>
+                        <li className={isAdmin ? 'nav-text' : 'hide'}>
+                            <a href='/criar_jogo' >
+                                <IoIcons.IoMdAdd />
+                                <span>Criar jogo</span>
+                            </a>
+                        </li>
+                        <li className={isAdmin ? 'nav-text' : 'hide'}>
+                            <a href='/criar_categoria' >
+                                <IoIcons.IoMdAdd />
+                                <span>Criar categoria</span>
+                            </a>
+                        </li>
+                        <li className={isAdmin ? 'nav-text' : 'hide'}>
+                            <a href='/criar_publisher' >
+                                <IoIcons.IoMdAdd />
+                                <span>Criar publisher</span>
+                            </a>
                         </li>
                         <li className='nav-text'>
                             <a href='/' onClick={logout}>

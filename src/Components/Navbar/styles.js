@@ -206,13 +206,10 @@ export const Container = styled.nav`
         border: 2px solid white;
     }
     form{
-        margin-top: 4rem;
         margin-right: 1.5rem;
     }
 
-    .register{
-        margin-top: 10rem;
-    }
+    
 
  
 

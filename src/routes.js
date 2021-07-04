@@ -17,12 +17,13 @@ export const MyRoutes = () => {
       <Route path='/category/:name'>
         <Category/>
       </Route>
-      <Route path='/'>
-        <Home/>
-      </Route>
       <Route path="/Login">
         <Login_page />
       </Route>
+      <Route path='/'>
+        <Home/>
+      </Route>
+      
     </Switch>
   );
 }

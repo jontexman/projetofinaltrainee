@@ -11,12 +11,13 @@ function App() {
   
   return (
     <div id = "wrapper">
-      <GlobalStyle/>
-      <Navbar/>
-      <Router>
-        <MyRoutes/>
-      </Router>
-      <Footer/>
+        <GlobalStyle/>
+        <Navbar/>
+        <Router>
+          <MyRoutes/>
+        </Router>
+        <Footer/>
+     
     </ div>
   );
 }

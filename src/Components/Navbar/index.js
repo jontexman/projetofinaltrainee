@@ -9,6 +9,7 @@ import {IconContext} from 'react-icons';
 import { CategoryData } from './CategoryData';
 import { PublisherData } from './PublisherData';
 import {api} from '../../services/api'
+import AuthenticationButton from "../authbutton";
 
 
 export const Navbar = () => {
@@ -150,14 +151,14 @@ export const Navbar = () => {
                         <a href='#' className='menu-bars'>
                             <AiIcons.AiOutlineClose onClick={showRightbar}/>
                         </a>
-                        <span>Entrar</span>
+                        <AuthenticationButton />
                         </li>
                         <li className='nav-text small'>
                                 <span>Não é cadastrado? <a onClick={showRegisterbar}>Registre-se</a></span>
                         </li>
                         <li className='nav-text'>
                             <form>
-                                <label>Usuário/Email</label>
+                                <label>Email</label>
                                 <input type='text' id='user'/>
                                 <label>Senha</label>
                                 <input type='password' id='password'/>
@@ -179,8 +180,6 @@ export const Navbar = () => {
                         </li>
                         <li className='nav-text'>
                             <form className='register'>
-                                <label>Usuário</label>
-                                <input type='text' id='user'/>
                                 <label>Email</label>
                                 <input type='email' id='email'/>
                                 <label>Senha</label>

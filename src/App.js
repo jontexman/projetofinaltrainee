@@ -6,17 +6,21 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import {MyRoutes} from './routes'
 import { useState, useEffect} from 'react'
 import {api} from './services/api'
+import {UserProvider} from './contexts/userContext'
+
 function App() {
   
   
   return (
     <div id = "wrapper">
-      <GlobalStyle/>
-      <Navbar/>
-      <Router>
-        <MyRoutes/>
-      </Router>
-      <Footer/>
+      <UserProvider>
+        <GlobalStyle/>
+        <Navbar/>
+        <Router>
+          <MyRoutes/>
+        </Router>
+        <Footer/>
+      </UserProvider>
     </ div>
   );
 }

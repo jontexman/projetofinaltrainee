@@ -9,9 +9,12 @@ import {IconContext} from 'react-icons';
 import { CategoryData } from './CategoryData';
 import { PublisherData } from './PublisherData';
 import {api} from '../../services/api'
+import {useUserContext} from '../../contexts/userContext'
 
 
 export const Navbar = () => {
+    const {user, setUserContext} = useUserContext();
+
     const firstRenderReg = useRef(true);
     const firstRenderLog = useRef(true);
 
@@ -52,6 +55,7 @@ export const Navbar = () => {
             .then((response) => {
                 alert("Logado com Sucesso!")
                 console.log(response.data)
+                setUserContext(response.data)
                 showRightbar()
                 
             }, (error) => {
@@ -69,6 +73,11 @@ export const Navbar = () => {
             'password': Event.target.password.value
         }
         setUserLogin(user);
+    }
+
+    const logout = () => {
+        setUserContext(null)
+        showUserbar()
     }
 
     const [categories, setCategories] = useState([]);
@@ -119,6 +128,11 @@ export const Navbar = () => {
         setRightbar(!rightbar)
     };
     const closeRegisterbar = () => setRegisterbar(false);
+
+    const [userbar, setUserbar] = useState(false);
+    const showUserbar = () =>{ 
+        setUserbar(!userbar)
+    };
 
     return (
         <Container>
@@ -199,8 +213,8 @@ export const Navbar = () => {
                 </div>
 
                 
-                <a href='#' className='menu-bars-right' onClick={showRightbar} >
-                    <span>Entrar</span>
+                <a href='#' className='menu-bars-right' onClick={user? showUserbar : showRightbar} >
+                    <span>{user? user.name: "Entrar"}</span>
                     <AiIcons.AiOutlineUser className='hide-small'/>
                 </a>
                 <nav className={rightbar ? 'nav-menu-right active' : 'nav-menu-right'}>
@@ -248,6 +262,21 @@ export const Navbar = () => {
                                 <input type='password' id='confirm_password'/>
                                 <button type='submit'>Registrar</button>
                             </form>
+                        </li>
+                    </ul>
+                </nav>
+                <nav className={userbar ? 'nav-menu-right active' : 'nav-menu-right'}>
+                    <ul className='nav-menu-items' onClick={showUserbar}>
+                        <li className='navbar-toggle'>
+                        <a href='#' className='menu-bars'>
+                            <AiIcons.AiOutlineClose />
+                        </a>
+                        </li>
+                        <li className='nav-text'>
+                            <a href='/' onClick={logout}>
+                                <FiIcons.FiLogOut />
+                                <span>Sair</span>
+                            </a>
                         </li>
                     </ul>
                 </nav>

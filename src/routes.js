@@ -5,8 +5,6 @@ import { Home } from './pages/home';
 import { Publisher } from './pages/publisher';
 import { UserPage } from './pages/UserPage';
 import {Login_page} from './pages/LoginPage'
-
-import {Publisher} from './pages/publisher'
 import {Category} from './pages/category'
 
 
@@ -21,9 +19,6 @@ export const MyRoutes = () => {
       </Route>
       <Route path='/category/:name'>
         <Category/>
-      </Route>
-      <Route path='/'>
-        <Home/>
       </Route>
       <Route path="/Login">
         <Login_page />

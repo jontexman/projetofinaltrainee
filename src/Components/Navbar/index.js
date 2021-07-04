@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import LogoAzul from '../../assets/logo_azul.png';
 import { Container } from './styles';
 import * as FaIcons from 'react-icons/fa';
@@ -12,21 +12,25 @@ import {api} from '../../services/api'
 
 
 export const Navbar = () => {
-    
+    const firstRenderReg = useRef(true);
+    const firstRenderLog = useRef(true);
 
     const [user_register, setUserRegister] = useState([]);
 
     useEffect(() =>{
-        api.post('users/create', {"user": user_register})
-        .then((response) => {
-            alert("Registrado com sucessso! Faça login agora")
-            console.log(response.data)
-            showRegisterbar()
-            
-        }, (error) => {
-            alert("Erro, tente novamente")
-            console.log(error)
-        })
+        if (!firstRenderReg.current){
+            api.post('users/create', {"user": user_register})
+            .then((response) => {
+                alert("Registrado com sucessso! Faça login agora")
+                console.log(response.data)
+                showRegisterbar()
+                
+            }, (error) => {
+                alert("Erro, tente novamente")
+                console.log(error)
+            })
+        }
+        firstRenderReg.current = false;
       }, [user_register]);
 
     const handleSubmitRegister = (Event) => {
@@ -43,8 +47,19 @@ export const Navbar = () => {
     const [user_login, setUserLogin] = useState([]);
 
     useEffect(() =>{
-        api.post('users/login', user_login)
-        .then((response) => {console.log(response.data)})
+        if (!firstRenderLog.current){
+            api.post('users/login', user_login)
+            .then((response) => {
+                alert("Logado com Sucesso!")
+                console.log(response.data)
+                showRightbar()
+                
+            }, (error) => {
+                alert("Erro, tente novamente")
+                console.log(error)
+            })
+        }
+        firstRenderLog.current = false;
       }, [user_login]);
 
     const handleSubmitLogin = (Event) => {

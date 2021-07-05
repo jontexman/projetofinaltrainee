@@ -6,8 +6,6 @@ import * as FiIcons from 'react-icons/fi';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import {IconContext} from 'react-icons';
-import { CategoryData } from './CategoryData';
-import { PublisherData } from './PublisherData';
 import {api} from '../../services/api'
 import {useUserContext} from '../../contexts/userContext'
 
@@ -218,8 +216,8 @@ export const Navbar = () => {
 
                 
                 <a href='#' className='menu-bars-right' onClick={user? showUserbar : showRightbar} >
-                    <span>{user? user.name: "Entrar"}</span>
                     <AiIcons.AiOutlineUser className='hide-small'/>
+                    <span>{user? user.name: "Entrar"}</span>
                 </a>
                 <nav className={rightbar ? 'nav-menu-right active' : 'nav-menu-right'}>
                     <ul className='nav-menu-items'>
@@ -275,6 +273,12 @@ export const Navbar = () => {
                         <a href='#' className='menu-bars'>
                             <AiIcons.AiOutlineClose />
                         </a>
+                        </li>
+                        <li className='nav-text'>
+                            <a href='/UserPage'>
+                                <FaIcons.FaRegUserCircle />
+                                <span>Minha Página</span>
+                            </a>
                         </li>
                         <li className={isAdmin ? 'nav-text' : 'hide'}>
                             <a href='/criar_jogo' >

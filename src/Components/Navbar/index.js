@@ -24,6 +24,7 @@ export const Navbar = () => {
             .then((response) => {
                 alert("Registrado com sucessso! Faça login agora")
                 console.log(response.data)
+                console.log(response)
                 showRegisterbar()
                 
             }, (error) => {

@@ -27,7 +27,7 @@ export const CreateGameForm = () => {
               if (response.status == 200){
                 alert("Registrado com sucessso!")
                 console.log(response.data)
-                //history.push("/")
+                history.push("/")
               } else {
                 alert("Não autorizado")
               }

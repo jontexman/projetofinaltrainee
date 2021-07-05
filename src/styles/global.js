@@ -87,4 +87,15 @@ export const GlobalStyle = createGlobalStyle`
         } 
     }
 
+    form .game-form{
+      display: inline;
+      width: 100%;
+      label{
+        font-size: 20px;
+        font: roboto;
+        color: #FFF;
+      }
+    }
+
+
 `;

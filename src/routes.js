@@ -6,6 +6,7 @@ import { Publisher } from './pages/publisher';
 import { UserPage } from './pages/UserPage';
 import {Login_page} from './pages/LoginPage'
 import {Category} from './pages/category'
+import {CreateGame} from './pages/creategame'
 
 
 export const MyRoutes = () => {
@@ -25,6 +26,9 @@ export const MyRoutes = () => {
       </Route>
       <Route path="/UserPage">
         <UserPage />
+      </Route>
+      <Route path="/criar_jogo">
+        <CreateGame />
       </Route>
       <Route path='/'>
         <Home />
